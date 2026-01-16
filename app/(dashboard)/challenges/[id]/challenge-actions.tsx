@@ -20,7 +20,7 @@ export default function ChallengeActions({
     setLoading(false);
 
     if (!r.ok) {
-      setError(r.message);
+      setError(r.message ?? 'Ocurrió un error.');
       return;
     }
     window.location.reload();
@@ -33,7 +33,7 @@ export default function ChallengeActions({
     setLoading(false);
 
     if (!r.ok) {
-      setError(r.message);
+      setError(r.message ?? 'Ocurrió un error.');
       return;
     }
     window.location.reload();
