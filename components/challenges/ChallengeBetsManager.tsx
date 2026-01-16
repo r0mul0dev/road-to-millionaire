@@ -62,7 +62,7 @@ export default function ChallengeBetsManager({
     setSaving(false);
 
     if (!r.ok) {
-      setError(r.message);
+      setError(r.message ?? 'No se pudo reabrir el reto.');
       return;
     }
 
@@ -75,7 +75,7 @@ export default function ChallengeBetsManager({
     setError(null);
     const r = await setBetResultAction(betId, newResult);
     if (!r.ok) {
-      setError(r.message);
+      setError(r.message ?? 'No se pudo reabrir el reto.');
       return;
     }
     window.location.reload();
@@ -87,7 +87,7 @@ export default function ChallengeBetsManager({
     setError(null);
     const r = await deleteBetAction(betId);
     if (!r.ok) {
-      setError(r.message);
+      setError(r.message ?? 'No se pudo reabrir el reto.');
       return;
     }
     window.location.reload();
